@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spring Boot Demo Widgets</title>
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<h1>My Widgets</h1>
+<ul th:unless="${widgets.isEmpty()}">
+    <li th:each="widget: ${widgets}" th:inline="text">
+        [[${widget.name}]] - [[${widget.description}]]
+    </li>
+</ul>
+<div th:if="${widgets.isEmpty()}">
+    No Widgets in the system!
+</div>
+</body>
+</html>
